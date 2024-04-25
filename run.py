@@ -18,7 +18,7 @@ BATCH_SIZE = 256 if AVAIL_GPUS else 64
 class Model(pl.LightningModule):
     def __init__(self, layer_size=784):
         super().__init__()
-        self.save_hyperparameters()
+        
         self.l1 = torch.nn.Linear(layer_size, 10)
 
     def forward(self, x):
